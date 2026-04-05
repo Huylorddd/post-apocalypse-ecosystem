@@ -20,7 +20,9 @@
     <div class="d-flex align-items-center justify-content-center vh-100 body-img position-relative">
         <a class="btn btn-outline-light position-absolute top-0 start-0 m-3" href="#">Buy a Coffee ☕</a>
 
-        <div class="card text-white" style="width: 400px; background-color: rgba(0, 0, 0, 0.3); border: 0;">
+        <button class="btn btn-outline-light position-absolute top-0 end-0 m-3" onclick="onAudio()" id="speaker"></button>
+
+        <div class="card text-white fade-in" style="width: 400px; background-color: rgba(0, 0, 0, 0.3); border: 0;">
             <div class="card-body text-center">
                 <h1>P.A ECOSYSTEM</h1>
                 <a class="btn btn-outline-light" href="https://github.com/Huylorddd/post-apocalypse-ecosystem" target="_blank">Repository</a>
@@ -53,8 +55,21 @@
     </div>
     
     <script>
-        var audio = document.getElementById("bg-audio");
+        let audio = document.getElementById("bg-audio");
         audio.volume = 0.2;
+        
+        document.getElementById("speaker").innerHTML = "🔊";
+
+        function onAudio() {
+            if (audio.volume == 0.2) {
+                audio.volume = 0;
+                document.getElementById("speaker").innerHTML = "🔇";
+            }
+            else {
+                audio.volume = 0.2;
+                document.getElementById("speaker").innerHTML = "🔊";
+            }
+        }
     </script>
 
 </body>
